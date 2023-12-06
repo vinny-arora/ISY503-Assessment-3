@@ -130,6 +130,8 @@ def main():
     # Evaluate the model's performance
     accuracy = accuracy_score(y_test, y_pred)
     classification_rep = classification_report(y_test, y_pred)
+    print("Accuracy: ", accuracy)
+    print("Classification Report:\n", classification_rep)
     import joblib
 
     # Save the model to a file
@@ -138,6 +140,7 @@ def main():
     # Save the CountVectorizer vocabulary
     vocab_filename = 'vectorizer_vocab.joblib'
     joblib.dump(vectorizer.vocabulary_, vocab_filename)
+    
     import joblib
     from sklearn.feature_extraction.text import CountVectorizer
     import string
